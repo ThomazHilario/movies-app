@@ -8,7 +8,7 @@ function App() {
       <BrowserRouter>
         <header>
           <Link to='/' id='homeLink'>Movies-Release</Link>
-          <Link>Favorites</Link>
+          <Link to='/favoritos'>Favorites</Link>
         </header>
 
         <main>
