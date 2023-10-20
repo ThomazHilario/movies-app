@@ -1,19 +1,22 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import Home from './componentes/pages/home'
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <header>
-          <Link>Movies-Release</Link>
+          <Link to='/' id='homeLink'>Movies-Release</Link>
           <Link>Favorites</Link>
         </header>
 
-        <Routes>
-          <Route path='/'/>
-          <Route path='/favoritos'/>
-          <Route path='/filme/:id'/>
-        </Routes>
+        <main>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/favoritos'/>
+            <Route path='/filme/:id'/>
+          </Routes>
+        </main>
       </BrowserRouter>
     </div>
   );
