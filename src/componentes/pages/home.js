@@ -32,10 +32,10 @@ export default function Home(){
                         <h1 className='film-title'>{item.title}</h1>
 
                         {/* image */}
-                        <img src={`${'https://image.tmdb.org/t/p/w200'}${item.poster_path}`}/>
+                        <img src={`${'https://image.tmdb.org/t/p/w200'}${item.poster_path}`} alt='imagem da api'/>
 
                         {/* link */}
-                        <Link to={`/filme/:${item.id}`}>ver mais</Link>
+                        <Link to={`/filme/${item.id}`}>ver mais</Link>
                     </div>
                 )
             })}

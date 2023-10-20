@@ -12,19 +12,18 @@ header > a{
     color: white;
     text-decoration: none;
 }
-main{
-    height: 90vh;
-}
 #homeLink{
     font-size: 30px;
 }
 
 /* container_home */
-#container_home{
-    border: 1px solid black;
+main{
     background-color: rgb(30, 50, 60);
+    padding: 20px;
 }
-
+#container_home{
+    background-color: rgb(30, 50, 60)
+}
 /* container filmes*/
 .container_filmes{
     display: flex;
@@ -48,6 +47,7 @@ main{
     color: white;
     padding: 20px;
 }
+
 
 .container_filmes > a{
     text-decoration: none; 
