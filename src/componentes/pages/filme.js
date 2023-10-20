@@ -3,7 +3,12 @@ import {Link, useParams} from 'react-router-dom'
 import '../style/filmes.css'
 
 export default function FilmePage(){
+    // state - filme
     const [filme,setFilme] = useState({})
+
+    // pegando o id
+    const {id} = useParams()
+
 
     // useEffect para setar o filme da api no state filme
     useEffect(()=>{
@@ -22,10 +27,7 @@ export default function FilmePage(){
 
         // executando a função
         loadStateFilme()
-    },[])
-
-    // pegando o id
-    const {id} = useParams()
+    },[id])
 
     // função adicionar
     function adicionar(){
