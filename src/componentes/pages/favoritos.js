@@ -10,14 +10,24 @@ export default function Favoritos(){
         setLista(lista)
     },[])
  
+    // Deletando item
+    function deleteItem(index){
+        // Deletando item da posicao especifica
+        lista.splice(index,1)
+
+        // Setando alteracao - puxando o que restou da lista
+        setLista([...lista])
+
+    }
+
     return(
         <div id="favoritos_container">
             <ul>
-                {list.map((item,idx) => {
+                {list.length > 0 ? list.map((item,idx) => {
                     return(
-                        <li key={idx}>{item}</li>
+                        <li key={idx} className='itens'>{item}<button onClick={() => deleteItem(idx)} className='btn-delete'>Delete</button></li>
                     )
-                })}
+                }) : <li>Nao tem nada na sua lista de favoritos</li>}
             </ul>
         </div>
     )
