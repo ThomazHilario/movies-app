@@ -1,6 +1,7 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Home from './componentes/pages/home'
+import FavoritoPage from './componentes/pages/favoritos'
 import MoviePage from './componentes/pages/filme'
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <main>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/favoritos'/>
+            <Route path='/favoritos' element={<FavoritoPage/>}/>
             <Route path='/filme/:id' element={<MoviePage/>}/>
           </Routes>
         </main>

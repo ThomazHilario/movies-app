@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import '../style/filmes.css'
-
+import lista from '../lista/lista'
 export default function FilmePage(){
     // state - filme
     const [filme,setFilme] = useState({})
@@ -30,8 +30,8 @@ export default function FilmePage(){
     },[id])
 
     // função adicionar
-    function adicionar(){
-
+    function adicionar(id){
+        lista.push(id)
     }
 
     return(
@@ -46,7 +46,7 @@ export default function FilmePage(){
                 {/* buttons */}
                 <div id='container_buttons'>
                     <Link to='/'>Voltar</Link>
-                    <button onClick={adicionar}>Watch List</button>
+                    <button onClick={() => adicionar(filme.title)}>Watch List</button>
                 </div>
             </div>
             
