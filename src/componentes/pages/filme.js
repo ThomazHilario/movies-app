@@ -30,8 +30,8 @@ export default function FilmePage(){
     },[id])
 
     // função adicionar
-    function adicionar(id){
-        lista.push(id)
+    function adicionar(titleMovie){
+        lista.push(titleMovie)
     }
 
     return(
