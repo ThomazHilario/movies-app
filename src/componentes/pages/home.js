@@ -9,12 +9,16 @@ export default function Home(){
     // useEffect - antes do componente ser montado
     useEffect(()=>{
         async function loadList(){
-            // Requisicao ao banco de dados de filmes
-            let response = await fetch(url)
-            let data = await response.json()
+            try {
+                // Requisicao ao banco de dados de filmes
+                let response = await fetch(url)
+                let data = await response.json()
 
-            // setando a os dados da api na state list
-            setList(data.results)
+                // setando a os dados da api na state list
+                setList(data.results)
+            } catch (error) {
+                console.log(error)
+            }
         }
 
         // executando a funcao loadList para setar os valores da api no state list
