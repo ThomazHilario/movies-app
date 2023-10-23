@@ -3,7 +3,7 @@ import lista from '../lista/lista'
 import '../style/favoritos.css'
 export default function Favoritos(){
     // state - lista
-    const [list,setLista] = useState(lista)
+    const [list,setList] = useState(lista)
 
     // Deletando item
     function deleteItem(index){
@@ -11,7 +11,7 @@ export default function Favoritos(){
         lista.splice(index,1)
 
         // Setando alteracao - puxando o que restou da lista
-        setLista([...lista])
+        setList([...lista])
 
     }
 
