@@ -1,15 +1,10 @@
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import lista from '../lista/lista'
 import '../style/favoritos.css'
 export default function Favoritos(){
     // state - lista
-    const [list,setLista] = useState([])
+    const [list,setLista] = useState(lista)
 
-    // useEffect
-    useEffect(() => {
-        setLista(lista)
-    },[])
- 
     // Deletando item
     function deleteItem(index){
         // Deletando item da posicao especifica
