@@ -31,7 +31,11 @@ export default function FilmePage(){
 
     // função adicionar
     function adicionar(titleMovie){
+        // Adicionando o titulo do filme na lista
         lista.push(titleMovie)
+
+        // Adicionando na local storage
+        localStorage.setItem('filmes',JSON.stringify(lista))
     }
 
     return(

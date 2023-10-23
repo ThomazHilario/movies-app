@@ -1,10 +1,16 @@
 import {useState} from 'react'
 import lista from '../lista/lista'
 import '../style/favoritos.css'
+
+// Vendo se tem algo na localStorage
+if(localStorage.getItem('filmes') !== null){
+    lista.push(...JSON.parse(localStorage.getItem('filmes')))
+}
+
 export default function Favoritos(){
     // state - lista
     const [list,setList] = useState(lista)
-
+    
     // Deletando item
     function deleteItem(index){
         // Deletando item da posicao especifica
@@ -13,6 +19,8 @@ export default function Favoritos(){
         // Setando alteracao - puxando o que restou da lista
         setList([...lista])
 
+        // Salvando na localStorage a nova lista
+        localStorage.setItem('filmes',JSON.stringify(lista))
     }
 
     return(
