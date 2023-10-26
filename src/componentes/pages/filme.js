@@ -1,4 +1,5 @@
 import {useState,useEffect} from 'react'
+import axios from 'axios'
 import {Link, useParams} from 'react-router-dom'
 import '../style/filmes.css'
 import lista from '../lista/lista'
@@ -14,9 +15,9 @@ export default function FilmePage(){
     useEffect(()=>{
         async function loadStateFilme(){
             try {
-                // fazendo requisição
-                let response = await fetch(`https://api.themoviedb.org/3/movie/${id}?language=pt-BR&api_key=9aa32f8e4d5315b556d76dc60bc308ac`)
-                let data = await response.json()
+                // fazendo requisição com axios
+                let response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=pt-BR&api_key=9aa32f8e4d5315b556d76dc60bc308ac`)
+                let data = response.data
 
                 // setando o valor da api no state filme
                 setFilme(data)
