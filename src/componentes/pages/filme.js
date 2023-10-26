@@ -17,12 +17,15 @@ export default function FilmePage(){
             try {
                 // fazendo requisição com axios
                 let response = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=pt-BR&api_key=9aa32f8e4d5315b556d76dc60bc308ac`)
-                let data = response.data
+                if(response.status === 200){
+                    let data = response.data
 
-                // setando o valor da api no state filme
-                setFilme(data)
+                    // setando o valor da api no state filme
+                    setFilme(data)
+                }
             } catch (error) {
                 console.log(error)
+                setFilme('erro')
             }
         }
 
@@ -41,7 +44,7 @@ export default function FilmePage(){
 
     return(
         <div className='container'>
-            <div className='container_filme'>
+           {typeof filme === 'string' ? <h1>Filme não encontrado</h1> : <div className='container_filme'>
                 {/* titulo */}
                 <h1 className='film-title'>{filme.title}</h1>
                 {/* imagem */}
@@ -53,8 +56,7 @@ export default function FilmePage(){
                     <Link to='/'>Voltar</Link>
                     <button onClick={() => adicionar(filme.title)}>Watch List</button>
                 </div>
-            </div>
-            
+            </div>}
         </div>
        
     )
