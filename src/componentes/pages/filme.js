@@ -6,7 +6,7 @@ import lista from '../lista/lista'
 export default function FilmePage(){
     // state - filme
     const [filme,setFilme] = useState({})
-
+    const [carregado,setCarregado] = useState(false)
     // pegando o id
     const {id} = useParams()
 
@@ -31,6 +31,7 @@ export default function FilmePage(){
 
         // executando a função
         loadStateFilme()
+        setCarregado(true)
     },[id])
 
     // função adicionar
@@ -40,6 +41,14 @@ export default function FilmePage(){
 
         // Adicionando na local storage
         localStorage.setItem('filmes',JSON.stringify(lista))
+    }
+
+    if(carregado === false){
+        return(
+            <div id='container_home'>
+                <h1>Carregando filme</h1>
+            </div>
+        )
     }
 
     return(

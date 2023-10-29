@@ -23,8 +23,9 @@ export default function Home(){
 
         // executando a funcao loadList para setar os valores da api no state list
         loadList()
-
     },[])
+
+
     return(
         // container home
         <div id='container_home'>
