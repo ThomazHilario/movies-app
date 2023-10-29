@@ -69,3 +69,18 @@
     font-size: 20px;
     cursor: pointer;
 }
+
+/* telas com a partir de 1280px */
+@media screen and (min-width:1280px) {
+    .film-title{
+        font-size: 30px;
+    }
+    .container_filme{
+        width: 90%;
+    }
+    .text-sinopse{
+        width: 700px;
+        font-size: 20px;
+    }
+}
+
