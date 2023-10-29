@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
-const url = 'https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&page=1&region=BR&api_key=9aa32f8e4d5315b556d76dc60bc308ac'
+const url = 'https://api.themoviedb.org/3/movie/now_playing?language=pt-BR&region=BR&api_key=9aa32f8e4d5315b556d76dc60bc308ac'
 
 export default function Home(){
     // state - lista de filmes
