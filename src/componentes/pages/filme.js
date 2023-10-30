@@ -58,6 +58,7 @@ export default function FilmePage(){
                 <h1 className='film-title'>{filme.title}</h1>
                 {/* imagem */}
                     <img src={`https://image.tmdb.org/t/p/w200${filme.poster_path}`} alt='imagem da api'/>
+                    <p>Avaliação {parseFloat((filme.vote_average)).toFixed(1)} / 10</p>
                 {/* sinopse */}
                     <p className='text-sinopse'>{filme.overview}</p>
                 {/* buttons */}
