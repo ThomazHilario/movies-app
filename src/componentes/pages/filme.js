@@ -63,7 +63,7 @@ export default function FilmePage(){
                 {/* buttons */}
                 <div id='container_buttons'>
                     <Link to='/'>Voltar</Link>
-                    <a href={`https://www.youtube.com/results?search_query=${filme.title}_trailer`} rel="noreferrer" target="_blank" id='btn-trailer'>Trailer</a>
+                    <a href={`https://www.youtube.com/results?search_query=${filme.title}_trailer`} target="blank" id='btn-trailer'>Trailer</a>
                     <button onClick={() => adicionar(filme.title)}>Watch List</button>
                 </div>
             </div>}

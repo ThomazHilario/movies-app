@@ -54,6 +54,11 @@
     border-radius: 3px;
     padding: 5px 20px;
 }
+
+.container_filme #container_buttons > a:hover{
+    color: white;
+    transition: 0.7s;
+}
 /* link voltar */
 .container_filme #container_buttons > a:nth-child(1){
     background-color: rgb(109, 109, 205);
@@ -62,6 +67,7 @@
 #btn-trailer{
     background-color: rgb(177, 64, 64);
 }
+
 /* Estilizando button*/
 .container_filme #container_buttons > button{
     width: 110px;
@@ -75,7 +81,10 @@
     font-size: 20px;
     cursor: pointer;
 }
-
+.container_filme #container_buttons > button:hover{
+    color: white;
+    transition: 0.7s;
+}
 /* telas com a partir de 1280px */
 @media screen and (min-width:1280px) {
     .film-title{
