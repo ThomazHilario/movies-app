@@ -45,7 +45,7 @@ export default function FilmePage(){
 
     if(carregado === false){
         return(
-            <div id='container_home'>
+            <div className='container'>
                 <h1>Carregando filme</h1>
             </div>
         )
