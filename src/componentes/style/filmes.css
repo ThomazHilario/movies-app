@@ -49,13 +49,19 @@
     font-size: 20px;
     font-weight: bold;
     
-    background-color: rgb(109, 109, 205);
     color: black;
 
     border-radius: 3px;
     padding: 5px 20px;
 }
-
+/* link voltar */
+.container_filme #container_buttons > a:nth-child(1){
+    background-color: rgb(109, 109, 205);
+}
+/* btn trailer*/
+#btn-trailer{
+    background-color: rgb(177, 64, 64);
+}
 /* Estilizando button*/
 .container_filme #container_buttons > button{
     width: 110px;
