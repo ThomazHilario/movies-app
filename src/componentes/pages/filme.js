@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Link, useParams} from 'react-router-dom'
 import '../style/filmes.css'
 import lista from '../lista/lista'
+import {toast} from 'react-toastify'
 export default function FilmePage(){
     // state - filme
     const [filme,setFilme] = useState({})
@@ -41,6 +42,8 @@ export default function FilmePage(){
 
         // Adicionando na local storage
         localStorage.setItem('filmes',JSON.stringify(lista))
+
+        toast.success('Filme adicionado a sua lista')
     }
 
     if(carregado === false){

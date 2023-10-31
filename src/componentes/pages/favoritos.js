@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import lista from '../lista/lista'
 import '../style/favoritos.css'
+import {toast} from 'react-toastify'
 
 // Vendo se tem algo na localStorage
 if(localStorage.getItem('filmes') !== null){
@@ -21,6 +22,8 @@ export default function Favoritos(){
 
         // Salvando na localStorage a nova lista
         localStorage.setItem('filmes',JSON.stringify(lista))
+
+        toast.success('Filme removido')
     }
 
     return(
