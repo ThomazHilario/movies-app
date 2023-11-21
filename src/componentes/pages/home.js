@@ -30,20 +30,22 @@ export default function Home(){
         // container home
         <div id='container_home'>
             {/* criando um container_filmes para cada elemento do array */}
-            {list.map((item,idx) => {
-                return(
-                    <div key={idx} className='container_filmes'>
-                        {/* title */}
-                        <h1 className='film-title'>{item.title}</h1>
+            {list.map((item,idx) => <FilmeContainer key={idx} title={item.title} imagem={item.poster_path} id={item.id}/>)}
+        </div>
+    )
+}
 
-                        {/* image */}
-                        <img src={`${'https://image.tmdb.org/t/p/w200'}${item.poster_path}`} alt='imagem da api'/>
+function FilmeContainer(props){
+    return(
+        <div className='container_filmes'>
+            {/* title */}
+            <h1 className='film-title'>{props.title}</h1>
 
-                        {/* link */}
-                        <Link to={`/filme/${item.id}`}>ver mais</Link>
-                    </div>
-                )
-            })}
+            {/* image */}
+            <img src={`${'https://image.tmdb.org/t/p/w200'}${props.imagem}`} alt='imagem da api'/>
+
+            {/* link */}
+            <Link to={`/filme/${props.id}`}>ver mais</Link>
         </div>
     )
 }
